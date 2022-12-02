@@ -17,3 +17,20 @@ struct Student: Codable {
     let roomID: Int
     let hostelName: String
 }
+
+class StudentModel {
+    // MARK: - Properties
+
+    weak var delegate: NetworkDelegate?
+    let networkModel = Network()
+
+    // MARK: - Functions
+    
+    func downloadStudentData(params: [String: Any], url: String) {
+        let request = networkModel.request(params: params, url: url)
+        networkModel.response(request: request) { data in
+            let model = try! JSONDecoder().decode([Student].self, from: data) as [Student]?
+            self.delegate?.didReceiveData(data: model! as [Student])
+        }
+    }
+}

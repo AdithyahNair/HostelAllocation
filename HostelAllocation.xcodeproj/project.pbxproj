@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14536821293A488600BD6487 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14536820293A488600BD6487 /* Network.swift */; };
 		14BD05762939CF4400EEAE85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BD05752939CF4400EEAE85 /* AppDelegate.swift */; };
 		14BD05782939CF4400EEAE85 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BD05772939CF4400EEAE85 /* SceneDelegate.swift */; };
 		14BD057A2939CF4400EEAE85 /* SearchStudentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BD05792939CF4400EEAE85 /* SearchStudentVC.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		14536820293A488600BD6487 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		14BD05722939CF4400EEAE85 /* HostelAllocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HostelAllocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14BD05752939CF4400EEAE85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14BD05772939CF4400EEAE85 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14536822293A489400BD6487 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				14536820293A488600BD6487 /* Network.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		14BD05692939CF4400EEAE85 = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +70,7 @@
 		14BD05742939CF4400EEAE85 /* HostelAllocation */ = {
 			isa = PBXGroup;
 			children = (
+				14536822293A489400BD6487 /* Network */,
 				14BD05892939D11F00EEAE85 /* Model */,
 				14BD058A2939D12500EEAE85 /* View */,
 				14BD058B2939D12F00EEAE85 /* Controller */,
@@ -170,6 +181,7 @@
 			files = (
 				14BD057A2939CF4400EEAE85 /* SearchStudentVC.swift in Sources */,
 				14BD058F2939D93F00EEAE85 /* StudentDetailsView.swift in Sources */,
+				14536821293A488600BD6487 /* Network.swift in Sources */,
 				14BD05762939CF4400EEAE85 /* AppDelegate.swift in Sources */,
 				14BD05782939CF4400EEAE85 /* SceneDelegate.swift in Sources */,
 				14BD058D2939D15C00EEAE85 /* Student.swift in Sources */,
