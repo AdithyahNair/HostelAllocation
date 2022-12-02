@@ -9,23 +9,25 @@
 /* Begin PBXBuildFile section */
 		14BD05762939CF4400EEAE85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BD05752939CF4400EEAE85 /* AppDelegate.swift */; };
 		14BD05782939CF4400EEAE85 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BD05772939CF4400EEAE85 /* SceneDelegate.swift */; };
-		14BD057A2939CF4400EEAE85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BD05792939CF4400EEAE85 /* ViewController.swift */; };
+		14BD057A2939CF4400EEAE85 /* SearchStudentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BD05792939CF4400EEAE85 /* SearchStudentVC.swift */; };
 		14BD057D2939CF4400EEAE85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14BD057B2939CF4400EEAE85 /* Main.storyboard */; };
 		14BD057F2939CF4600EEAE85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14BD057E2939CF4600EEAE85 /* Assets.xcassets */; };
 		14BD05822939CF4600EEAE85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14BD05802939CF4600EEAE85 /* LaunchScreen.storyboard */; };
 		14BD058D2939D15C00EEAE85 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BD058C2939D15C00EEAE85 /* Student.swift */; };
+		14BD058F2939D93F00EEAE85 /* StudentDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BD058E2939D93F00EEAE85 /* StudentDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		14BD05722939CF4400EEAE85 /* HostelAllocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HostelAllocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14BD05752939CF4400EEAE85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14BD05772939CF4400EEAE85 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		14BD05792939CF4400EEAE85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		14BD05792939CF4400EEAE85 /* SearchStudentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchStudentVC.swift; sourceTree = "<group>"; };
 		14BD057C2939CF4400EEAE85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		14BD057E2939CF4600EEAE85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14BD05812939CF4600EEAE85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14BD05832939CF4600EEAE85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14BD058C2939D15C00EEAE85 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		14BD058E2939D93F00EEAE85 /* StudentDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 		14BD058A2939D12500EEAE85 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				14BD058E2939D93F00EEAE85 /* StudentDetailsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -89,7 +92,7 @@
 		14BD058B2939D12F00EEAE85 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				14BD05792939CF4400EEAE85 /* ViewController.swift */,
+				14BD05792939CF4400EEAE85 /* SearchStudentVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -165,7 +168,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14BD057A2939CF4400EEAE85 /* ViewController.swift in Sources */,
+				14BD057A2939CF4400EEAE85 /* SearchStudentVC.swift in Sources */,
+				14BD058F2939D93F00EEAE85 /* StudentDetailsView.swift in Sources */,
 				14BD05762939CF4400EEAE85 /* AppDelegate.swift in Sources */,
 				14BD05782939CF4400EEAE85 /* SceneDelegate.swift in Sources */,
 				14BD058D2939D15C00EEAE85 /* Student.swift in Sources */,
