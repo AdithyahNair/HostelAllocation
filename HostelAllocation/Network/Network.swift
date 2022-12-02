@@ -11,11 +11,11 @@ protocol NetworkDelegate: AnyObject {
     func didReceiveData(data: Any)
 }
 
+enum URLServices {
+    static let url = "http://localhost:8888/HostelAllocation/service.php"
+}
+
 class Network {
-    // MARK: - Constants
-
-    let url: String = "http://localhost:8888/HostelAllocation/service.php"
-
     // MARK: - Functions
 
     func request(params: [String: Any], url: String) -> URLRequest {

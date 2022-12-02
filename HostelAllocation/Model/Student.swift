@@ -8,14 +8,14 @@
 import Foundation
 
 struct Student: Codable {
-    let firstName: String
-    let lastName: String
-    let mobileNumber: String
-    let dept: String
-    let yearOfStudy: String
-    let hostelID: Int
-    let roomID: Int
-    let hostelName: String
+    let F_Name: String
+    let L_Name: String
+    let Mob_No: String
+    let Dept: String
+    let Year_Of_Study: String
+    let Hostel_ID: Int
+    let Room_ID: Int
+    let Hostel_Name: String
 }
 
 class StudentModel {
@@ -29,7 +29,7 @@ class StudentModel {
     func downloadStudentData(params: [String: Any], url: String) {
         let request = networkModel.request(params: params, url: url)
         networkModel.response(request: request) { data in
-            let model = try! JSONDecoder().decode([Student].self, from: data) as [Student]?
+            let model = try! JSONDecoder().decode([Student]?.self, from: data) as [Student]?
             self.delegate?.didReceiveData(data: model! as [Student])
         }
     }

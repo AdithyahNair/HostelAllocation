@@ -69,7 +69,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1222.1374045801526" y="-23.943661971830988"/>
+            <point key="canvasLocation" x="1228" y="-37"/>
+        </scene>
+        <!--Student DetailsVC-->
+        <scene sceneID="xxx-J9-xpU">
+            <objects>
+                <viewController storyboardIdentifier="StudentDetails" id="PGk-SJ-Cvr" customClass="StudentDetailsVC" customModule="HostelAllocation" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="s2y-ee-AaQ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="yBv-rx-q4G"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Wj7-6S-Ew5"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="utK-tx-h1T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1993" y="-37"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XA7-Jr-V42">
@@ -82,7 +100,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="4py-l4-2Qd"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="mzO-oc-qPB"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MSr-Qn-xVf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

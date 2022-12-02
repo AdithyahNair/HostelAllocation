@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		14536821293A488600BD6487 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14536820293A488600BD6487 /* Network.swift */; };
+		14536824293A54FD00BD6487 /* StudentDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14536823293A54FD00BD6487 /* StudentDetailsVC.swift */; };
 		14BD05762939CF4400EEAE85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BD05752939CF4400EEAE85 /* AppDelegate.swift */; };
 		14BD05782939CF4400EEAE85 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BD05772939CF4400EEAE85 /* SceneDelegate.swift */; };
 		14BD057A2939CF4400EEAE85 /* SearchStudentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BD05792939CF4400EEAE85 /* SearchStudentVC.swift */; };
@@ -15,11 +16,11 @@
 		14BD057F2939CF4600EEAE85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14BD057E2939CF4600EEAE85 /* Assets.xcassets */; };
 		14BD05822939CF4600EEAE85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14BD05802939CF4600EEAE85 /* LaunchScreen.storyboard */; };
 		14BD058D2939D15C00EEAE85 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BD058C2939D15C00EEAE85 /* Student.swift */; };
-		14BD058F2939D93F00EEAE85 /* StudentDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BD058E2939D93F00EEAE85 /* StudentDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		14536820293A488600BD6487 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		14536823293A54FD00BD6487 /* StudentDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetailsVC.swift; sourceTree = "<group>"; };
 		14BD05722939CF4400EEAE85 /* HostelAllocation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HostelAllocation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14BD05752939CF4400EEAE85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14BD05772939CF4400EEAE85 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,7 +30,6 @@
 		14BD05812939CF4600EEAE85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14BD05832939CF4600EEAE85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14BD058C2939D15C00EEAE85 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
-		14BD058E2939D93F00EEAE85 /* StudentDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,7 +72,6 @@
 			children = (
 				14536822293A489400BD6487 /* Network */,
 				14BD05892939D11F00EEAE85 /* Model */,
-				14BD058A2939D12500EEAE85 /* View */,
 				14BD058B2939D12F00EEAE85 /* Controller */,
 				14BD05752939CF4400EEAE85 /* AppDelegate.swift */,
 				14BD05772939CF4400EEAE85 /* SceneDelegate.swift */,
@@ -92,18 +91,11 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		14BD058A2939D12500EEAE85 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				14BD058E2939D93F00EEAE85 /* StudentDetailsView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		14BD058B2939D12F00EEAE85 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				14BD05792939CF4400EEAE85 /* SearchStudentVC.swift */,
+				14536823293A54FD00BD6487 /* StudentDetailsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -180,9 +172,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				14BD057A2939CF4400EEAE85 /* SearchStudentVC.swift in Sources */,
-				14BD058F2939D93F00EEAE85 /* StudentDetailsView.swift in Sources */,
 				14536821293A488600BD6487 /* Network.swift in Sources */,
 				14BD05762939CF4400EEAE85 /* AppDelegate.swift in Sources */,
+				14536824293A54FD00BD6487 /* StudentDetailsVC.swift in Sources */,
 				14BD05782939CF4400EEAE85 /* SceneDelegate.swift in Sources */,
 				14BD058D2939D15C00EEAE85 /* Student.swift in Sources */,
 			);
