@@ -56,11 +56,12 @@ class SearchStudentVC: UIViewController {
 
 extension SearchStudentVC: NetworkDelegate {
     func didReceiveData(data: Any) {
-        DispatchQueue.main.async {
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let secondViewController = storyboard.instantiateViewController(withIdentifier: "StudentDetails") as! StudentDetailsVC
-            secondViewController.model = (data as! [Student])
-            self.navigationController?.pushViewController(secondViewController, animated: false)
+        DispatchQueue.main.sync {
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let secondVC = storyBoard.instantiateViewController(withIdentifier: "StudentDetails") as! StudentDetailsVC
+            secondVC.model = data as? [Student]
+            self.navigationController?.pushViewController(secondVC, animated: false)
         }
+        
     }
 }

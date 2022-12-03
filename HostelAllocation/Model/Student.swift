@@ -25,12 +25,12 @@ class StudentModel {
     let networkModel = Network()
 
     // MARK: - Functions
-    
+
     func downloadStudentData(params: [String: Any], url: String) {
         let request = networkModel.request(params: params, url: url)
         networkModel.response(request: request) { data in
-            let model = try! JSONDecoder().decode([Student]?.self, from: data) as [Student]?
-            self.delegate?.didReceiveData(data: model! as [Student])
+            let student = try! JSONDecoder().decode([Student].self, from: data) as [Student]
+            self.delegate?.didReceiveData(data: student)
         }
     }
 }
