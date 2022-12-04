@@ -10,14 +10,14 @@ import UIKit
 class StudentDetailsVC: UIViewController {
     // MARK: - Properties
 
-    var model: [Student]?
+    var model: Student?
 
     // MARK: - IBOutlets
 
     @IBOutlet var lblFName: UILabel! {
         didSet {
-            if model!.count != 0 {
-                lblFName.text = model![0].F_Name
+            if model != nil{
+                lblFName.text = model?.F_Name
             } else {
                 lblFName.text = ""
             }
@@ -26,8 +26,8 @@ class StudentDetailsVC: UIViewController {
 
     @IBOutlet var lblLName: UILabel! {
         didSet {
-            if model!.count != 0 {
-                lblLName.text = model![0].L_Name
+            if model != nil{
+                lblLName.text = model?.L_Name
             } else {
                 lblLName.text = ""
             }
@@ -36,8 +36,8 @@ class StudentDetailsVC: UIViewController {
 
     @IBOutlet var lblMobileNumber: UILabel! {
         didSet {
-            if model!.count != 0 {
-                lblMobileNumber.text = model![0].Mob_No
+            if model != nil{
+                lblMobileNumber.text = model?.Mob_No
             } else {
                 lblMobileNumber.text = ""
             }
@@ -46,8 +46,8 @@ class StudentDetailsVC: UIViewController {
 
     @IBOutlet var lblDepartment: UILabel! {
         didSet {
-            if model!.count != 0 {
-                lblDepartment.text = model![0].Dept
+            if model != nil{
+                lblDepartment.text = model?.Dept
             } else {
                 lblDepartment.text = ""
             }
@@ -56,8 +56,8 @@ class StudentDetailsVC: UIViewController {
 
     @IBOutlet var lblYear: UILabel! {
         didSet {
-            if model!.count != 0 {
-                lblYear.text = model![0].Year_Of_Study
+            if model != nil{
+                lblYear.text = model?.Year_Of_Study
             } else {
                 lblYear.text = ""
             }
@@ -66,8 +66,8 @@ class StudentDetailsVC: UIViewController {
 
     @IBOutlet var lblHostelID: UILabel! {
         didSet {
-            if model!.count != 0 {
-                lblHostelID.text = String(model![0].Hostel_ID)
+            if model != nil{
+                lblHostelID.text = model?.Hostel_ID.codingKey.stringValue
             } else {
                 lblHostelID.text = ""
             }
@@ -76,8 +76,8 @@ class StudentDetailsVC: UIViewController {
 
     @IBOutlet var lblHostelName: UILabel! {
         didSet {
-            if model!.count != 0 {
-                lblHostelName.text = model![0].Hostel_Name
+            if model != nil{
+                lblHostelName.text = model?.Hostel_Name
             } else {
                 lblHostelName.text = ""
             }
@@ -86,8 +86,8 @@ class StudentDetailsVC: UIViewController {
 
     @IBOutlet var lblRoomNumber: UILabel! {
         didSet {
-            if model!.count != 0 {
-                lblRoomNumber.text = String(model![0].Room_ID)
+            if model != nil{
+                lblRoomNumber.text = model?.Room_ID.codingKey.stringValue
             } else {
                 lblRoomNumber.text = ""
             }
@@ -97,23 +97,16 @@ class StudentDetailsVC: UIViewController {
     // MARK: - Functions
 
     func setUp() {
-        let backButton = UIButton(type: .custom)
-        backButton.setTitle("Back", for: .normal)
-        backButton.addTarget(self, action: #selector(tappedBackButton), for: .allTouchEvents)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
         navigationItem.title = "Profile"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(tappedBackButton))
     }
 
     @objc func tappedBackButton() {
-        navigationController?.popToRootViewController(animated: false)
+        navigationController?.popToRootViewController(animated: true)
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationItem.title = "Profile"
-    }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUp()
     }
 }

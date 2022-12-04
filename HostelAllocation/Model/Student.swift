@@ -26,11 +26,23 @@ class StudentModel {
 
     // MARK: - Functions
 
-    func downloadStudentData(params: [String: Any], url: String) {
-        let request = networkModel.request(params: params, url: url)
-        networkModel.response(request: request) { data in
-            let student = try! JSONDecoder().decode([Student].self, from: data) as [Student]
-            self.delegate?.didReceiveData(data: student)
+    func downloadStudentData(query: String) {
+        let request = networkModel.request(query: query)
+        networkModel.response(request: request, query: query) { data in
+            if let data = data {
+                self.networkModel.parseJSON(data: data) { student in
+                    if let _student = student {
+                        if _student.count != 0 {
+                            let student = _student[0]
+                            self.delegate?.didReceiveData(data: student)
+                        } else {
+                            self.delegate?.didNotReceiveData(title: "Not found", message: "Student data not present in db")
+                        }
+                    }
+                }
+            } else {
+                self.delegate?.didNotReceiveData(title: "Connection Error", message: "Could not connect to database")
+            }
         }
     }
 }

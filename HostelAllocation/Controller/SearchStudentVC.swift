@@ -10,7 +10,7 @@ import UIKit
 class SearchStudentVC: UIViewController {
     // MARK: - Properties
 
-    let model = StudentModel()
+    var model = StudentModel()
 
     // MARK: - IBOutlets
 
@@ -48,20 +48,27 @@ class SearchStudentVC: UIViewController {
 
     @objc func getStudentData() {
         if let studentID = textField.text {
-            let param = ["Student_ID": studentID]
-            model.downloadStudentData(params: param, url: URLServices.url)
+            model.downloadStudentData(query: "Student_ID=\(studentID)")
         }
     }
 }
 
 extension SearchStudentVC: NetworkDelegate {
     func didReceiveData(data: Any) {
-        DispatchQueue.main.sync {
+        DispatchQueue.main.async {
             let storyBoard = UIStoryboard(name: "Main", bundle: nil)
             let secondVC = storyBoard.instantiateViewController(withIdentifier: "StudentDetails") as! StudentDetailsVC
-            secondVC.model = data as? [Student]
+            secondVC.model = data as? Student
             self.navigationController?.pushViewController(secondVC, animated: false)
         }
-        
+    }
+
+    func didNotReceiveData(title: String, message: String) {
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let action = UIAlertAction(title: "Ok", style: .default)
+            alert.addAction(action)
+            self.present(alert, animated: true)
+        }
     }
 }

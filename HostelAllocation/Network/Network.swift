@@ -9,59 +9,45 @@ import Foundation
 
 protocol NetworkDelegate: AnyObject {
     func didReceiveData(data: Any)
-}
-
-enum URLServices {
-    static let url = "http://localhost:8888/HostelAllocation/service.php"
+    func didNotReceiveData(title: String, message: String)
 }
 
 class Network {
+    // MARK: - Properties
+
+    let localhostURL = "http://localhost:8888/HostelAllocation/service.php"
+
     // MARK: - Functions
 
-    func request(params: [String: Any], url: String) -> URLRequest {
-        var request = URLRequest(url: URL(string: url)!)
-        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        request.httpMethod = "POST"
-        request.httpBody = params.percentEscaped().data(using: .utf8)
-        return request
+    func request(query: String) -> URLRequest {
+        let url = URL(string: localhostURL)
+        guard let url = url else { fatalError("Could not create URL from Localhost") }
+        return URLRequest(url: url)
     }
 
-    func response(request: URLRequest, completionBlock: @escaping (Data) -> Void) {
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data,
-                  let response = response as? HTTPURLResponse,
-                  error == nil else {
-                print("error", error ?? "Unknown error")
-                return
+    func response(request: URLRequest, query: String, completion: @escaping (Data?) -> Void) {
+        var request = request
+        request.httpMethod = "POST"
+        request.httpBody = query.data(using: String.Encoding.utf8)
+        let task = URLSession.shared.dataTask(with: request) { data, _, _ in
+            if let data = data {
+                completion(data)
+            } else {
+                completion(nil)
             }
-            guard (200 ... 299) ~= response.statusCode else {
-                print("statusCode should be 2xx, but is \(response.statusCode)")
-                print("response = \(response)")
-                return
-            }
-            completionBlock(data)
         }
         task.resume()
     }
-}
 
-extension Dictionary {
-    func percentEscaped() -> String {
-        return map { key, value in
-            let escapedKey = "\(key)".addingPercentEncoding(withAllowedCharacters: .urlQueryValueAllowed) ?? ""
-            let escapedValue = "\(value)".addingPercentEncoding(withAllowedCharacters: .urlQueryValueAllowed) ?? ""
-            return escapedKey + "=" + escapedValue
+    func parseJSON(data: Data, completion: @escaping ([Student]?) -> Void) {
+        let decoder = JSONDecoder()
+        do {
+            if let decodedData = try decoder.decode([Student]?.self, from: data) {
+                completion(decodedData)
+                return
+            }
+        } catch {
+            print("Error decoding data: \(error)")
         }
-        .joined(separator: "&")
     }
-}
-
-extension CharacterSet {
-    static let urlQueryValueAllowed: CharacterSet = {
-        let generalDelimitersToEncode = ":#[]@"
-        let subDelimitersToEncode = "!$&'()*+,;="
-        var allowed = CharacterSet.urlQueryAllowed
-        allowed.remove(charactersIn: "\(generalDelimitersToEncode)\(subDelimitersToEncode)")
-        return allowed
-    }()
 }
