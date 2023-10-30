@@ -23,5 +23,6 @@ We use a PHP service and send a POST request to the file to create a query and f
 ![Picture2](https://github.com/AdithyahNair/HostelAllocation/assets/74417984/ce4bce75-e6f7-4502-aea1-933762726667)
 
 ### 4. Student Data when the correct Roll.No is entered.
+![Picture3](https://github.com/AdithyahNair/HostelAllocation/assets/74417984/34e85eaa-d870-4e74-b296-d27caace2fe1)
 
-> This app was made for the DBMS Lab Project
+> This app was made as a part of my Database Management Course lab project.
